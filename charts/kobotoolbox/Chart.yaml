@@ -1,0 +1,33 @@
+apiVersion: v2
+name: kobotoolbox
+version: 0.2.28
+description: KoboToolbox field data collection solution
+home: https://www.kobotoolbox.org/
+icon: https://avatars.githubusercontent.com/u/5543677?s=400&v=4
+keywords:
+  - survey
+  - field
+sources:
+  - https://github.com/one-acre-fund/oaf-public-charts/tree/main/charts/kobotoolbox
+maintainers:
+  - name: Yann-J
+    email: yann.jouanique@gmail.com
+dependencies:
+  - name: redis
+    version: ~16.12.2
+    repository: https://charts.bitnami.com/bitnami
+    condition: redismain.enabled
+    alias: redismain
+  - name: redis
+    version: ~16.12.2
+    repository: https://charts.bitnami.com/bitnami
+    condition: rediscache.enabled
+    alias: rediscache
+  - name: postgresql
+    version: ~11.6.6
+    repository: https://charts.bitnami.com/bitnami
+    condition: postgresql.enabled
+  - name: mongodb
+    version: ~12.1.20
+    repository: https://charts.bitnami.com/bitnami
+    condition: mongodb.enabled
